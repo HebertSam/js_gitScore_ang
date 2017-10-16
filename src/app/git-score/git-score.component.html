@@ -1,0 +1,13 @@
+<h1>GitHub Score</h1>
+
+<form (submit)="gitScore()" >
+  GitHub Username <input type="text" [(ngModel)]="user.user" name="user">
+  <input type="submit">
+</form>
+
+<h1>Your Score: {{newScore.public_repos}}</h1>
+<h1 *ngIf="newScore.public_repos < 20">Needs Work!</h1>
+<h1 *ngIf="newScore.public_repos < 50 && newScore.public_repos > 20">A decent start</h1>
+<h1 *ngIf="newScore.public_repos < 100 && newScore.public_repos > 50">Doing good!</h1>
+<h1 *ngIf="newScore.public_repos < 200 && newScore.public_repos > 100">Needs Work!</h1>
+<h1 *ngIf="newScore.public_repos >= 200">Github Elite!</h1>
